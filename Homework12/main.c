@@ -27,6 +27,7 @@ int main(int argc, char **argv){
 					{
 						flag.load = 1;
 						num = loadStruct(info);
+						sort(info, num);
 						fclose(f);
 					}
 					else

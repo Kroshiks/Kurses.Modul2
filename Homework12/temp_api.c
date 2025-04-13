@@ -24,17 +24,17 @@ uint16_t loadStruct(sen* info){
 	addInfo(info, i++, 2025, 1, 10, 15, 36, -3);
 	addInfo(info, i++, 2025, 2, 11, 4, 21, -11);
 	addInfo(info, i++, 2025, 3, 27, 15, 45, 8);
-	addInfo(info, i++, 2025, 3, 30, 8, 00, 7);
+	addInfo(info, i++, 2025, 5, 30, 8, 00, 7);
 	addInfo(info, i++, 2025, 4, 2, 13, 10, 11);
-	addInfo(info, i++, 2025, 4, 6, 17, 30, 13);
-	addInfo(info, i++, 2025, 5, 23, 21, 54, -23);
-	addInfo(info, i++, 2025, 5, 5, 21, 54, 33);
+	addInfo(info, i++, 2025, 8, 6, 17, 30, 13);
+	addInfo(info, i++, 2025, 10, 23, 21, 54, -23);
+	addInfo(info, i++, 2025, 2, 5, 21, 54, 33);
 	addInfo(info, i++, 2025, 6, 23, 21, 54, 55);
 	addInfo(info, i++, 2025, 7, 23, 21, 54, 42);
 	addInfo(info, i++, 2025, 8, 23, 21, 54, -99);
 	addInfo(info, i++, 2025, 9, 23, 21, 54, 23);
-	addInfo(info, i++, 2025, 10, 23, 21, 54, 57);
-	addInfo(info, i++, 2025, 10, 23, 21, 54, 67);
+	addInfo(info, i++, 2025, 5, 23, 21, 54, 57);
+	addInfo(info, i++, 2025, 6, 23, 21, 54, 67);
 	addInfo(info, i++, 2025, 11, 23, 21, 54, 0);
 	addInfo(info, i++, 2025, 12, 23, 21, 54, 12);
 	return i;	
@@ -138,4 +138,19 @@ void analyzeYear(sen* info, stat* year, uint16_t num){
 	year->avr = sum / num;
 	year->min = min;
 	year->max = max;
+}
+
+void sort(sen *info, uint16_t num){
+    for (uint16_t i = 0; i < num - 1; i++)
+    {
+        for (uint16_t j = 0; j < num - i - 1; j++)
+        {
+            if (info[j].month > info[j + 1].month)
+            {
+                sen temp = info[j];
+                info[j] = info[j + 1];
+                info[j + 1] = temp;
+            }
+        }
+    }
 }

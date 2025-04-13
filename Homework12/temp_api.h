@@ -33,3 +33,4 @@ void print(sen* info, uint16_t num);
 void analyzeMonth(sen* info, stat* month, uint16_t num, uint8_t arg);
 void analyzeYear(sen* info, stat* year, uint16_t num);
 void menu();
+void sort(sen *info, uint16_t num);
